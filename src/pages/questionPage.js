@@ -82,7 +82,6 @@ export const initQuestionPage = (storedIndex) => {
     .getElementById(NEXT_QUESTION_BUTTON_ID)
     .addEventListener('click', () => {
       nextQuestion();
-      console.log('nextquestion çağrıldı');
       startTimer();
     })
 
