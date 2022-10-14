@@ -5,9 +5,9 @@ import { quizData } from '../data.js';
 
 export const createScoreElement = () => {
   const element = document.createElement('div');
-  element.className = 'd-flex justify-content-between'
+  element.className = 'scoreAndTimer'
   element.innerHTML = String.raw`
-  <p class="btn btn-success w-25"> Score: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p>
+  <div><p class="btn btn-success"> Score <span class="btn btn-secondary score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p></div>
   `;
   element.style.pointerEvents = 'none'
   return element;

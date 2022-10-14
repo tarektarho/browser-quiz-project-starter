@@ -10,6 +10,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { initFinishPage } from './finishPage.js';
 import { createScoreElement, updateScore } from '../views/scoreView.js';
+import { createTimerElement,startTimer, stopTimer } from '../views/timeView.js';
 
 export const initQuestionPage = (storedIndex) => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -22,6 +23,12 @@ export const initQuestionPage = (storedIndex) => {
   userInterface.appendChild(questionElement);
   const scoreElement = createScoreElement();
   userInterface.insertBefore(scoreElement, userInterface.firstChild);
+
+
+  const timerElement = createTimerElement();
+  scoreElement.appendChild(timerElement);
+
+  //const timeCount = document.querySelector(".timer .timer-sec")
 
   const correctAnswer = (event) => {
     if (currentQuestion.selected != null) {
@@ -37,6 +44,7 @@ export const initQuestionPage = (storedIndex) => {
       return;
     }
 
+    stopTimer();
     const correctAnswerElement = document.getElementById(
       currentQuestion.correct
     );
@@ -44,11 +52,12 @@ export const initQuestionPage = (storedIndex) => {
       event.target.id
     );
     const liTags = document.getElementsByTagName('li');
+   
     for (let liTag of liTags) {
       // after selected question, disabled the others.
       liTag.style.pointerEvents = 'none';
       liTag.style.background = 'gray';
-      liTag.style.color = 'white'
+      liTag.style.color = 'white';
     }
       const isCorrectAnswer = event.target.id === currentQuestion.correct;
       if (isCorrectAnswer) {
@@ -71,7 +80,11 @@ export const initQuestionPage = (storedIndex) => {
   }
   document
     .getElementById(NEXT_QUESTION_BUTTON_ID)
-    .addEventListener('click', nextQuestion);
+    .addEventListener('click', () => {
+      nextQuestion();
+      console.log('nextquestion çağrıldı');
+      startTimer();
+    })
 
   
   if (storedIndex) {

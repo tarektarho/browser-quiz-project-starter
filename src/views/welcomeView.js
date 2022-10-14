@@ -10,7 +10,7 @@ export const createWelcomeElement = () => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
     <h1 class= "welcome text-shadow">Welcome <br> To <br>Space </h1>
-    <button class="btn btn-success btn-lg" id="${START_QUIZ_BUTTON_ID}">Start Diving</button>
+    <button class="btn btn-success btn-lg w-50 p-3 mt-3" id="${START_QUIZ_BUTTON_ID}">Start Diving</button>
   `;
   element.classList.add("startDiv");
   return element;
