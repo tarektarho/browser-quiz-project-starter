@@ -27,6 +27,7 @@ export const initQuestionPage = (storedIndex) => {
     if (currentQuestion.selected != null) {
       return;
     }
+
     const selectedAnswer = event.target.id;
     localStorage.setItem('selectedAnswer', selectedAnswer);
   };
@@ -97,7 +98,6 @@ export const initQuestionPage = (storedIndex) => {
   }
   
 };
-
 /**
  * 
  * @param {*} correctAnswerElement 

@@ -9,7 +9,7 @@ import { START_QUIZ_BUTTON_ID } from '../constants.js';
 export const createWelcomeElement = () => {
   const element = document.createElement('div');
   element.innerHTML = String.raw`
-    <h1>Welcome to Space Dive! </h1>
+    <h1 class= "welcome text-shadow">Welcome <br> To <br>Space </h1>
     <button class="btn btn-success btn-lg" id="${START_QUIZ_BUTTON_ID}">Start Diving</button>
   `;
   element.classList.add("startDiv");

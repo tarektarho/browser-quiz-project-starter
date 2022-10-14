@@ -5,13 +5,15 @@ import { quizData } from '../data.js';
 
 export const createScoreElement = () => {
   const element = document.createElement('div');
+  element.className = 'd-flex justify-content-between'
   element.innerHTML = String.raw`
-  <p class="score-box"> Score: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p>
+  <p class="btn btn-success w-25"> Score: <span class="score" id="${CURRENT_SCORE_ID}"> ${quizData.finalScore} </span> </p>
   `;
-
+  element.style.pointerEvents = 'none'
   return element;
 };
 
 export const updateScore = () => {
   document.getElementById(CURRENT_SCORE_ID).innerText = quizData.finalScore;
 }
+
