@@ -13,3 +13,4 @@ export const ANSWERS_LIST_ID = 'answers-list';
 export const NEXT_QUESTION_BUTTON_ID = 'next-question-button';
 export const START_PARENT_DIV = 'document.getElementById("start-quiz-button").parentElement';
 export const CURRENT_SCORE_ID = 'current-score';
+export const TIME_COUNTER_ID = 'time-counter'
